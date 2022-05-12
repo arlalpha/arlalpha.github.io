@@ -21,7 +21,7 @@ async function start() {
   
     if (image) image.remove();
     if (canvas) canvas.remove();
-    image = await faceapi.fetchImage("http://127.0.0.1:5500/test_images/test.jpg")
+    image = await faceapi.fetchImage("https://arlalpha.github.io/test_images/test.jpg")
     container.append(image);
     canvas = faceapi.createCanvasFromMedia(image);
     container.append(canvas);
@@ -52,7 +52,7 @@ function loadLabeledImages() {
       const descriptions = [];
       for (let i = 1; i <= 2; i++) {
         const img = await faceapi.fetchImage(
-          `http://127.0.0.1:5500/labeled_images/${label}/${i}.jpg`
+          `https://arlalpha.github.io/labeled_images/${label}/${i}.jpg`
         );
         const detections = await faceapi
           .detectSingleFace(img)
